@@ -1,4 +1,4 @@
-import { Amplitude as AmplitudeCore, IUser } from "@amplitude/amplitude-core";
+import { Amplitude as AmplitudeCore, IUser } from "@amplitude-alpha/amplitude-core";
 
 export interface UserClient<T> {
   userId(userId: string): T;

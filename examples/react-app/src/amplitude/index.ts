@@ -8,18 +8,18 @@
  * To update run 'amplitude-cli pull'
  */
 
-import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude/amplitude-core";
-import { User as UserCore } from "@amplitude/user";
-import { Amplitude as AmplitudeBrowser } from "@amplitude/amplitude-browser";
-import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude/analytics-core";
-import { Analytics as AnalyticsBrowser } from "@amplitude/analytics-browser";
+import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude-alpha/amplitude-core";
+import { User as UserCore } from "@amplitude-alpha/user";
+import { Amplitude as AmplitudeBrowser } from "@amplitude-alpha/amplitude-browser";
+import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude-alpha/analytics-core";
+import { Analytics as AnalyticsBrowser } from "@amplitude-alpha/analytics-browser";
 import {
   IExperimentClient as IExperimentClientCore,
   Experiment as ExperimentBrowser,
-} from "@amplitude/experiment-browser";
+} from "@amplitude-alpha/experiment-browser";
 
 export { Logger, NoLogger };
-export { MessageHub, hub } from "@amplitude/hub";
+export { MessageHub, hub } from "@amplitude-alpha/hub";
 export type { AnalyticsEvent };
 
 /**
@@ -490,7 +490,7 @@ export class Amplitude extends AmplitudeBrowser {
           ...config,
           apiKey,
         });
-        
+
         core.addPlugin(analytics);
         core.addPlugin(experiment);
       },

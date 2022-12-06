@@ -1,5 +1,5 @@
-import { AmplitudeMessage } from "@amplitude/hub";
-import { jsons } from "@amplitude/util";
+import { AmplitudeMessage } from "@amplitude-alpha/hub";
+import { jsons } from "@amplitude-alpha/util";
 import { Config as AmplitudeConfig } from "./config";
 
 export interface PluginConfig extends AmplitudeConfig {

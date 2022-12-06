@@ -1,4 +1,4 @@
-# dx-assessment-and-analysis-poc
+# Amplitude Unified SDK (Alpha)
 Proof of concept for new SDK architecture designed to improve cross-product functionality and overall developer experience.
 
 # Examples

@@ -237,7 +237,7 @@ export class AnalyticsNodeCodeGenerator extends AnalyticsCoreCodeGenerator {
 import {
   Analytics as AnalyticsNode,
   AnalyticsClient as AnalyticsClientNode
-} from "@amplitude/analytics-node";`
+} from "@amplitude-alpha/analytics-node";`
     )
       .code(`\
 export class AnalyticsClient extends AnalyticsClientNode implements IAnalyticsClient {

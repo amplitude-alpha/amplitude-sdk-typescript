@@ -1,6 +1,6 @@
-import { Amplitude as AmplitudeCore, AmplitudeConfig } from "@amplitude/amplitude-core";
-import { User, user as defaultUser } from '@amplitude/user';
-import { AtLeast } from "@amplitude/util";
+import { Amplitude as AmplitudeCore, AmplitudeConfig } from "@amplitude-alpha/amplitude-core";
+import { User, user as defaultUser } from '@amplitude-alpha/user';
+import { AtLeast } from "@amplitude-alpha/util";
 import { BrowserPluginConfig } from "./plugin";
 
 export class Amplitude extends AmplitudeCore {

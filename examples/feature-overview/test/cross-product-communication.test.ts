@@ -1,7 +1,7 @@
 import { Amplitude, experiment, analytics, user, MessageHub, User, Logger } from "../amplitude/browser";
-import { userUpdatedMessage, MessageTypes as UserMessageTypes } from "@amplitude/user-messages";
-import { trackMessage, MessageTypes as AnalyticsMessageTypes } from "@amplitude/analytics-messages";
-import { analytics as segmentAnalytics } from "@amplitude/plugin-segment-analytics-browser";
+import { userUpdatedMessage, MessageTypes as UserMessageTypes } from "@amplitude-alpha/user-messages";
+import { trackMessage, MessageTypes as AnalyticsMessageTypes } from "@amplitude-alpha/analytics-messages";
+import { analytics as segmentAnalytics } from "@amplitude-alpha/plugin-segment-analytics-browser";
 
 const apiKey = 'test-api-key';
 const userId = 'test-user-id';

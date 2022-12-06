@@ -1,5 +1,5 @@
-import { Config, AmplitudePluginBase } from "@amplitude/amplitude-core";
-import { User } from "@amplitude/user";
+import { Config, AmplitudePluginBase } from "@amplitude-alpha/amplitude-core";
+import { User } from "@amplitude-alpha/user";
 
 export interface BrowserPluginConfig extends Config {
   user: User,

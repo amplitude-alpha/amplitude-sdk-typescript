@@ -4,8 +4,8 @@
  * Separate out Group functionality into its own Plugin
  */
 
-import { AmplitudePluginBase, AmplitudePluginCategory, IUser } from "@amplitude/amplitude-core";
-import { isEmpty, jsons } from "@amplitude/util";
+import { AmplitudePluginBase, AmplitudePluginCategory, IUser } from "@amplitude-alpha/amplitude-core";
+import { isEmpty, jsons } from "@amplitude-alpha/util";
 
 export type { IUser };
 

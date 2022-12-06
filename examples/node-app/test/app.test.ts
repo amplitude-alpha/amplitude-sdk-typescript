@@ -1,6 +1,6 @@
 import { Amplitude, experiment, analytics, user, MessageHub, User, Logger } from "../src/amplitude";
-import { userUpdatedMessage, MessageTypes as UserMessageTypes } from "@amplitude/user-messages";
-import { trackMessage, MessageTypes as AnalyticsMessageTypes } from "@amplitude/analytics-messages";
+import { userUpdatedMessage, MessageTypes as UserMessageTypes } from "@amplitude-alpha/user-messages";
+import { trackMessage, MessageTypes as AnalyticsMessageTypes } from "@amplitude-alpha/analytics-messages";
 
 const apiKey = 'test-api-key';
 const userId = 'test-user-id';

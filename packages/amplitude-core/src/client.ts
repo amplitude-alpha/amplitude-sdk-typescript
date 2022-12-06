@@ -1,5 +1,5 @@
-import { AtLeast } from "@amplitude/util";
-import { hub } from "@amplitude/hub";
+import { AtLeast } from "@amplitude-alpha/util";
+import { hub } from "@amplitude-alpha/hub";
 import { PluginConfig } from "./plugin";
 import { Config } from "./config";
 import { NoLogger, systemLogger } from "./logger";

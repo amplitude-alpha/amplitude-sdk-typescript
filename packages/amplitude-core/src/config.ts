@@ -1,5 +1,5 @@
 import { Logger } from "./logger";
-import { MessageHub } from "@amplitude/hub";
+import { MessageHub } from "@amplitude-alpha/hub";
 
 export interface Config {
   apiKey: string;

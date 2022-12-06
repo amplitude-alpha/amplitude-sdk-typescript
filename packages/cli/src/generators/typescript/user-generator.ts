@@ -17,7 +17,7 @@ export class UserCodeGenerator implements CodeGenerator {
 
   async generate(): Promise<CodeBlock> {
     return new CodeBlock()
-      .import(`import { User as UserCore } from "@amplitude/user";`)
+      .import(`import { User as UserCore } from "@amplitude-alpha/user";`)
       .code(`\
 /**
  * USER

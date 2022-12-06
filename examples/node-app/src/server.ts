@@ -4,7 +4,7 @@
  * For basic NodeJS usage see [app.ts](./app.ts)
  */
 
-import { getProductConfigurationFromEnv } from "@amplitude/util";
+import { getProductConfigurationFromEnv } from "@amplitude-alpha/util";
 import dotenv from 'dotenv';
 import express  from "express";
 import {

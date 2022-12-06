@@ -4,15 +4,15 @@ import {
   BrowserAmplitudePluginBase,
   BrowserPluginConfig,
   IUser,
-} from "@amplitude/amplitude-browser";
-import { IExperimentClient, Variant } from "@amplitude/experiment-core";
-import { newTrackMessage } from "@amplitude/analytics-messages";
+} from "@amplitude-alpha/amplitude-browser";
+import { IExperimentClient, Variant } from "@amplitude-alpha/experiment-core";
+import { newTrackMessage } from "@amplitude-alpha/analytics-messages";
 import {
   Experiment as ExperimentLegacy,
   ExperimentClient as ExperimentClientLegacy, ExperimentUser,
 } from "@amplitude/experiment-js-client";
-import { userUpdatedMessage } from "@amplitude/user-messages";
-import { jsons } from "@amplitude/util";
+import { userUpdatedMessage } from "@amplitude-alpha/user-messages";
+import { jsons } from "@amplitude-alpha/util";
 
 export type { Variant };
 export { IExperimentClient };

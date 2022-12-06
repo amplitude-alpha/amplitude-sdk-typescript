@@ -7,7 +7,7 @@
 import dotenv from 'dotenv';
 
 import { amplitude, analytics, experiment, UserLoggedIn, Logger, User } from './amplitude'
-import { getProductConfigurationFromEnv } from "@amplitude/util";
+import { getProductConfigurationFromEnv } from "@amplitude-alpha/util";
 
 // Read Configuration
 dotenv.config()

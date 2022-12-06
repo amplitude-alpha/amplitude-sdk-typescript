@@ -1,8 +1,8 @@
-import { AmplitudePluginCategory, BrowserAmplitudePluginBase, BrowserPluginConfig } from "@amplitude/amplitude-browser";
-import { User } from "@amplitude/user";
-import { userUpdatedMessage } from "@amplitude/user-messages";
-import { newTrackMessage } from "@amplitude/analytics-messages";
-import { IExperiment, Variant } from "@amplitude/experiment-browser";
+import { AmplitudePluginCategory, BrowserAmplitudePluginBase, BrowserPluginConfig } from "@amplitude-alpha/amplitude-browser";
+import { User } from "@amplitude-alpha/user";
+import { userUpdatedMessage } from "@amplitude-alpha/user-messages";
+import { newTrackMessage } from "@amplitude-alpha/analytics-messages";
+import { IExperiment, Variant } from "@amplitude-alpha/experiment-browser";
 // import * as LDClient from 'launchdarkly-js-client-sdk';
 
 const LDClient = {

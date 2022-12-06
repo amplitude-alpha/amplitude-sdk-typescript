@@ -1,5 +1,5 @@
-import { AmplitudeMessage, createEventDefinition } from "@amplitude/hub";
-import { IUser, AmplitudePlugin } from "@amplitude/amplitude-core";
+import { AmplitudeMessage, createEventDefinition } from "@amplitude-alpha/hub";
+import { IUser, AmplitudePlugin } from "@amplitude-alpha/amplitude-core";
 
 export type { IUser };
 

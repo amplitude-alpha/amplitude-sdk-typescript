@@ -19,9 +19,9 @@ export class AmplitudeCoreCodeGenerator implements CodeGenerator {
     return new CodeBlock()
       .header(this.generateAutogenHeader())
       .import(`\
-import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude/amplitude-core";`)
+import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude-alpha/amplitude-core";`)
       .export(`export { Logger, NoLogger };`)
-      .export(`export { MessageHub, hub } from "@amplitude/hub";`)
+      .export(`export { MessageHub, hub } from "@amplitude-alpha/hub";`)
       .code(`\
 /**
  * GENERAL INTERFACES
@@ -61,7 +61,7 @@ export class AmplitudeBrowserCodeGenerator extends AmplitudeCoreCodeGenerator {
     const coreCode = await super.generate();
 
     return coreCode
-      .import(`import { Amplitude as AmplitudeBrowser } from "@amplitude/amplitude-browser";`)
+      .import(`import { Amplitude as AmplitudeBrowser } from "@amplitude-alpha/amplitude-browser";`)
       .merge(
         await (new AnalyticsBrowserCodeGenerator(this.config).generate()),
         await (new ExperimentBrowserCodeGenerator(this.config).generate()),
@@ -124,7 +124,7 @@ export class AmplitudeNodeCodeGenerator extends AmplitudeCoreCodeGenerator {
         await (new AnalyticsNodeCodeGenerator(this.config).generate()),
         await (new ExperimentNodeCodeGenerator(this.config).generate()),
       )
-      .import(`import { Amplitude as AmplitudeNode } from "@amplitude/amplitude-node";`)
+      .import(`import { Amplitude as AmplitudeNode } from "@amplitude-alpha/amplitude-node";`)
       .code(`\
 /**
  * AMPLITUDE

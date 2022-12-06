@@ -185,7 +185,7 @@ import {
   Experiment as ExperimentNode,
   ExperimentClient as ExperimentClientNode,
   IExperimentClient as IExperimentClientCore,
-} from "@amplitude/experiment-node";`)
+} from "@amplitude-alpha/experiment-node";`)
       .code(`\
 export class ExperimentClient extends ExperimentClientNode implements IExperimentClient {
   get typed() {

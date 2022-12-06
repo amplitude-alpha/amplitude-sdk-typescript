@@ -1,11 +1,11 @@
-import { AnalyticsEvent, IAnalyticsClient } from "@amplitude/analytics-core";
-import { trackMessage } from "@amplitude/analytics-messages";
+import { AnalyticsEvent, IAnalyticsClient } from "@amplitude-alpha/analytics-core";
+import { trackMessage } from "@amplitude-alpha/analytics-messages";
 import {
   AmplitudePlugin, AmplitudePluginBase, AmplitudePluginCategory, UserClient, Config, PluginConfig,
-} from "@amplitude/amplitude-node";
-import { User } from "@amplitude/user";
-import { jsons } from "@amplitude/util";
-import { createInstance } from "@amplitude/analytics-node-legacy";
+} from "@amplitude-alpha/amplitude-node";
+import { User } from "@amplitude-alpha/user";
+import { jsons } from "@amplitude-alpha/util";
+import { createInstance } from "@amplitude/analytics-node"
 import { NodeClient as NodeClientLegacy } from "@amplitude/analytics-types";
 
 export type { AnalyticsEvent };

@@ -1,18 +1,18 @@
 import {
   AnalyticsEvent, IAnalyticsClient, AnalyticsPluginConfig as AnalyticsPluginConfigCore,
-} from "@amplitude/analytics-core";
+} from "@amplitude-alpha/analytics-core";
 import {
   AmplitudePlugin, AmplitudePluginCategory, BrowserAmplitudePluginBase, BrowserPluginConfig,
-} from "@amplitude/amplitude-browser";
-import { jsons } from "@amplitude/util";
-import { trackMessage, newTrackMessage } from "@amplitude/analytics-messages";
+} from "@amplitude-alpha/amplitude-browser";
+import { jsons } from "@amplitude-alpha/util";
+import { trackMessage, newTrackMessage } from "@amplitude-alpha/analytics-messages";
 import {
   init,
   setUserId, setDeviceId, identify, Identify,
   track,
   flush,
-} from "@amplitude/analytics-browser-legacy";
-import { userUpdatedMessage } from "@amplitude/user-messages";
+} from "@amplitude/analytics-browser";
+import { userUpdatedMessage } from "@amplitude-alpha/user-messages";
 
 export type { AnalyticsEvent, IAnalyticsClient };
 

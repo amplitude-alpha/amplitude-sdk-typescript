@@ -1,16 +1,16 @@
 import {
   AmplitudePlugin, AmplitudePluginBase, AmplitudePluginCategory, UserClient, Config, PluginConfig,
-} from "@amplitude/amplitude-node";
-import { IUser, User } from "@amplitude/user";
-import { IExperimentClient, Variant } from "@amplitude/experiment-core";
-import { newTrackMessage } from "@amplitude/analytics-messages";
+} from "@amplitude-alpha/amplitude-node";
+import { IUser, User } from "@amplitude-alpha/user";
+import { IExperimentClient, Variant } from "@amplitude-alpha/experiment-core";
+import { newTrackMessage } from "@amplitude-alpha/analytics-messages";
 import {
   Experiment as ExperimentLegacy,
   RemoteEvaluationClient as RemoteEvaluationClientLegacy,
   ExperimentUser,
   Variants as VariantsLegacy
 } from "@amplitude/experiment-node-server";
-import { jsons } from "@amplitude/util";
+import { jsons } from "@amplitude-alpha/util";
 
 export type { Variant };
 export { IExperimentClient };

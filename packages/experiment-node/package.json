@@ -1,5 +1,5 @@
 {
-  "name": "@amplitude/experiment-node",
+  "name": "@amplitude-alpha/experiment-node",
   "version": "0.0.6",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
@@ -14,17 +14,14 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude/amplitude-node": "^0.0.6",
-    "@amplitude/analytics-messages": "^0.0.6",
-    "@amplitude/experiment-core": "^0.0.6",
-    "@amplitude/experiment-node-server": "^1.2.1",
-    "@amplitude/hub": "^0.0.6",
-    "@amplitude/user": "^0.0.6",
-    "@amplitude/util": "^0.0.6"
+    "@amplitude-alpha/amplitude-node": "^0.0.6",
+    "@amplitude-alpha/analytics-messages": "^0.0.6",
+    "@amplitude-alpha/experiment-core": "^0.0.6",
+    "@amplitude-alpha/hub": "^0.0.6",
+    "@amplitude-alpha/user": "^0.0.6",
+    "@amplitude-alpha/util": "^0.0.6",
+    "@amplitude/experiment-node-server": "^1.2.1"
   },
-  "bundledDependencies": [
-    "@amplitude/experiment-node-server"
-  ],
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",

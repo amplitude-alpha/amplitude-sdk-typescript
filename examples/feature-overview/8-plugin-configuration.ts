@@ -1,7 +1,7 @@
-import { amplitude, Logger } from "@amplitude/amplitude-browser";
-import { analytics } from "@amplitude/analytics-browser";
-import { experiment } from "@amplitude/experiment-browser";
-import { analytics as segmentAnalytics, SegmentAnalyticsConfig } from "@amplitude/plugin-segment-analytics-browser";
+import { amplitude, Logger } from "@amplitude-alpha/amplitude-browser";
+import { analytics } from "@amplitude-alpha/analytics-browser";
+import { experiment } from "@amplitude-alpha/experiment-browser";
+import { analytics as segmentAnalytics, SegmentAnalyticsConfig } from "@amplitude-alpha/plugin-segment-analytics-browser";
 import { prepareExampleEnv, getProductConfigurationFromEnv } from './utils'
 
 prepareExampleEnv();

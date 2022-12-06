@@ -8,22 +8,22 @@
  * To update run 'amplitude-cli pull'
  */
 
-import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude/amplitude-core";
-import { User as UserCore } from "@amplitude/user";
-import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude/analytics-core";
+import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } from "@amplitude-alpha/amplitude-core";
+import { User as UserCore } from "@amplitude-alpha/user";
+import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude-alpha/analytics-core";
 import {
   Analytics as AnalyticsNode,
   AnalyticsClient as AnalyticsClientNode
-} from "@amplitude/analytics-node";
+} from "@amplitude-alpha/analytics-node";
 import {
   Experiment as ExperimentNode,
   ExperimentClient as ExperimentClientNode,
   IExperimentClient as IExperimentClientCore,
-} from "@amplitude/experiment-node";
-import { Amplitude as AmplitudeNode } from "@amplitude/amplitude-node";
+} from "@amplitude-alpha/experiment-node";
+import { Amplitude as AmplitudeNode } from "@amplitude-alpha/amplitude-node";
 
 export { Logger, NoLogger };
-export { MessageHub, hub } from "@amplitude/hub";
+export { MessageHub, hub } from "@amplitude-alpha/hub";
 export type { AnalyticsEvent };
 
 /**

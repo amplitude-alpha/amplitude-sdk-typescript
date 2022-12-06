@@ -15,10 +15,10 @@
  *  1. It must be registered with an Amplitude instance with `amplitude.load({ plugins })` or `amplitude.addPlugin(plugin)`
  *  2. Access the product SDK using the Plugin instance e.g. `analytics.track(..)`, `experiment.fetch()`
  */
-import { amplitude, AmplitudePluginBase, AmplitudePluginCategory, Logger } from '@amplitude/amplitude-browser'
-import { analytics } from '@amplitude/analytics-browser'
-import { experiment } from '@amplitude/experiment-browser'
-import { user } from '@amplitude/user'
+import { amplitude, AmplitudePluginBase, AmplitudePluginCategory, Logger } from '@amplitude-alpha/amplitude-browser'
+import { analytics } from '@amplitude-alpha/analytics-browser'
+import { experiment } from '@amplitude-alpha/experiment-browser'
+import { user } from '@amplitude-alpha/user'
 import { prepareExampleEnv, getProductConfigurationFromEnv } from './utils'
 
 prepareExampleEnv();

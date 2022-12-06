@@ -4,7 +4,7 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-describe('@amplitude/cli', () => {
+describe('@amplitude-alpha/cli', () => {
   describe('config', () => {
     test('load from YAML', () => {
       const config = parseFromYaml(`\

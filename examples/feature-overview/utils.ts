@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-export { getProductConfigurationFromEnv } from '@amplitude/util';
+export { getProductConfigurationFromEnv } from '@amplitude-alpha/util';
 
 export function polyfillXHR() {
   // @ts-ignore

@@ -1,5 +1,5 @@
 {
-  "name": "@amplitude/experiment-core",
+  "name": "@amplitude-alpha/experiment-core",
   "version": "0.0.6",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
@@ -14,8 +14,8 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude/hub": "^0.0.6",
-    "@amplitude/util": "^0.0.6"
+    "@amplitude-alpha/hub": "^0.0.6",
+    "@amplitude-alpha/util": "^0.0.6"
   },
   "scripts": {
     "build": "tsc",

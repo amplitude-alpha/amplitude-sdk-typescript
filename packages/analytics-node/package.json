@@ -1,5 +1,5 @@
 {
-  "name": "@amplitude/analytics-node",
+  "name": "@amplitude-alpha/analytics-node",
   "version": "0.0.6",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
@@ -14,12 +14,12 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude/amplitude-node": "^0.0.6",
-    "@amplitude/analytics-core": "^0.0.6",
-    "@amplitude/analytics-node-legacy": "file:amplitude-analytics-node-0.6.2.tgz",
-    "@amplitude/hub": "^0.0.6",
-    "@amplitude/user": "^0.0.6",
-    "@amplitude/util": "^0.0.6"
+    "@amplitude-alpha/amplitude-node": "^0.0.6",
+    "@amplitude-alpha/analytics-core": "^0.0.6",
+    "@amplitude-alpha/hub": "^0.0.6",
+    "@amplitude-alpha/user": "^0.0.6",
+    "@amplitude-alpha/util": "^0.0.6",
+    "@amplitude/analytics-node": "^0.6.2"
   },
   "scripts": {
     "build": "tsc && cp amplitude-analytics-node-0.6.2.tgz ./lib",

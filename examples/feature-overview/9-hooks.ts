@@ -1,10 +1,10 @@
-import { amplitude, Logger } from "@amplitude/amplitude-browser";
-import { experiment } from "@amplitude/experiment-browser";
-import { analytics } from "@amplitude/analytics-browser";
-import { trackMessage } from "@amplitude/analytics-messages";
-import { hub } from "@amplitude/hub";
-import { user } from "@amplitude/user";
-import { userUpdatedMessage } from "@amplitude/user-messages";
+import { amplitude, Logger } from "@amplitude-alpha/amplitude-browser";
+import { experiment } from "@amplitude-alpha/experiment-browser";
+import { analytics } from "@amplitude-alpha/analytics-browser";
+import { trackMessage } from "@amplitude-alpha/analytics-messages";
+import { hub } from "@amplitude-alpha/hub";
+import { user } from "@amplitude-alpha/user";
+import { userUpdatedMessage } from "@amplitude-alpha/user-messages";
 import { prepareExampleEnv, getProductConfigurationFromEnv } from './utils'
 
 prepareExampleEnv();

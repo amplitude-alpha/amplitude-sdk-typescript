@@ -1,8 +1,8 @@
-import { IUser, AmplitudePluginBase, AmplitudePluginCategory } from "@amplitude/amplitude-core";
-import { isEmpty, jsons } from "@amplitude/util";
-import { newUserUpdatedMessage } from "@amplitude/user-messages";
+import { IUser, AmplitudePluginBase, AmplitudePluginCategory } from "@amplitude-alpha/amplitude-core";
+import { isEmpty, jsons } from "@amplitude-alpha/util";
+import { newUserUpdatedMessage } from "@amplitude-alpha/user-messages";
 
-export type { IUser } from '@amplitude/amplitude-core'
+export type { IUser } from '@amplitude-alpha/amplitude-core'
 
 /**
  * User Plugin
