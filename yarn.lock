@@ -5,9 +5,8 @@
 "@adobe/css-tools@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.0.1.tgz#b38b444ad3aa5fedbb15f2f746dcd934226a12dd"
-  integrity sha512-+u76oB43nOHrF4DDWRLWDCtci7f3QJoEBigemIdIeTi1ODqjx6Tad9NCVnPRwewWlKkVab5PlK8DCtPTyX7S8g==
 
-"@amplitude/analytics-browser@^1.2.1", "@amplitude/analytics-browser@^1.5.1":
+"@amplitude/analytics-browser@^1.5.1":
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@amplitude/analytics-browser/-/analytics-browser-1.6.6.tgz#33d92d60aa6e7269bfdbbfea66b2dd1b7ad0b049"
   integrity sha512-tR7JH5TPNt9h1PMOhnMP+aJdmty81ZaFg9UhIXHf86Crdac2GoYLXnzq3vMNK2Ad809jcGKssXJnVFkfXGxgIg==
@@ -2687,6 +2686,11 @@
   integrity sha512-ovzGpWnTrmFXX5TEV2VzBUz8oPLoPkqtGKpdvlHvnd0UADQUpmNxoSY7mzHclDLRMyb6MWnVKqlJiypTG/p9iw==
   dependencies:
     nx "14.7.17"
+
+"@nrwl/nx@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.7.tgz#a85dc5ab30d33ac6cc2234bbc51e229ad85b9b9b"
+  integrity sha512-a/pOozIT86IIWue6MSwN2EKO4grJ8My7QMl+g535/vrDg75riyBTkWF+nX6VM/JjGz40Y5nFZaX94924cZWt5g==
 
 "@nrwl/tao@14.7.17":
   version "14.7.17"
