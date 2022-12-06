@@ -97,7 +97,7 @@ export class Amplitude extends AmplitudeBrowser {
           ...config,
           apiKey,
         });
-        
+
         core.addPlugin(analytics);
         core.addPlugin(experiment);
       },

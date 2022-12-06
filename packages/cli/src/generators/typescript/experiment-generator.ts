@@ -155,7 +155,7 @@ export class ExperimentBrowserCodeGenerator extends ExperimentCoreCodeGenerator 
 import {
   IExperimentClient as IExperimentClientCore,
   Experiment as ExperimentBrowser,
-} from "@amplitude/experiment-browser";`
+} from "@amplitude-alpha/experiment-browser";`
       )
       .code(`\
 export class Experiment extends ExperimentBrowser implements IExperimentClient {

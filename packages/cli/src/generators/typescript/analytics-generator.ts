@@ -166,7 +166,7 @@ export class ${getClassName(schema.title)} implements ${baseEventType} {
       : '';
 
     return CodeBlock.import(
-    `import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude/analytics-core";`
+    `import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude-alpha/analytics-core";`
       )
       .export(`export type { AnalyticsEvent };`)
       .code(`\
@@ -207,7 +207,7 @@ export class AnalyticsBrowserCodeGenerator extends AnalyticsCoreCodeGenerator {
     const coreCode = await super.generate();
 
     return coreCode
-      .import(`import { Analytics as AnalyticsBrowser } from "@amplitude/analytics-browser";`)
+      .import(`import { Analytics as AnalyticsBrowser } from "@amplitude-alpha/analytics-browser";`)
       .code(`
 export class Analytics extends AnalyticsBrowser implements IAnalyticsClient {
   get ${typed}(): TrackingPlanMethods {
