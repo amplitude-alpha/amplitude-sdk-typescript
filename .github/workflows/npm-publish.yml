@@ -118,4 +118,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn lerna publish from-git --dist-tag ${{ env.DIST_TAG }} --yes --loglevel silly
+          yarn lerna publish from-git --dist-tag ${{ env.DIST_TAG }} --yes --loglevel silly --access public
