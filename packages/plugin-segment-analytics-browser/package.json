@@ -1,6 +1,6 @@
 {
   "name": "@amplitude-alpha/plugin-segment-analytics-browser",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
   "homepage": "",
@@ -14,10 +14,10 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude-alpha/amplitude-browser": "^0.0.7",
-    "@amplitude-alpha/analytics-browser": "^0.0.7",
-    "@amplitude-alpha/analytics-messages": "^0.0.7",
-    "@amplitude-alpha/util": "^0.0.7"
+    "@amplitude-alpha/amplitude-browser": "^0.0.8",
+    "@amplitude-alpha/analytics-browser": "^0.0.8",
+    "@amplitude-alpha/analytics-messages": "^0.0.8",
+    "@amplitude-alpha/util": "^0.0.8"
   },
   "scripts": {
     "build": "tsc",

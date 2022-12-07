@@ -1,6 +1,6 @@
 {
   "name": "@amplitude-alpha/experiment-node",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
   "homepage": "",
@@ -14,12 +14,12 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude-alpha/amplitude-node": "^0.0.7",
-    "@amplitude-alpha/analytics-messages": "^0.0.7",
-    "@amplitude-alpha/experiment-core": "^0.0.7",
-    "@amplitude-alpha/hub": "^0.0.7",
-    "@amplitude-alpha/user": "^0.0.7",
-    "@amplitude-alpha/util": "^0.0.7",
+    "@amplitude-alpha/amplitude-node": "^0.0.8",
+    "@amplitude-alpha/analytics-messages": "^0.0.8",
+    "@amplitude-alpha/experiment-core": "^0.0.8",
+    "@amplitude-alpha/hub": "^0.0.8",
+    "@amplitude-alpha/user": "^0.0.8",
+    "@amplitude-alpha/util": "^0.0.8",
     "@amplitude/experiment-node-server": "^1.2.1"
   },
   "scripts": {
