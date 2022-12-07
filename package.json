@@ -1,5 +1,5 @@
 {
-  "name": "dx-assessment-and-analysis-poc",
+  "name": "amplitude-sdk-typescript",
   "private": true,
   "workspaces": [
     "packages/*",

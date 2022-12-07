@@ -107,10 +107,15 @@ jobs:
         run: |
           yarn lerna version ${{ env.LERNA_PACKAGE_VERSION }} --create-release github --yes --loglevel silly
 
+      - name: Configure NPM User
+        if: ${{ env.DRY_RUN == 'false' }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
+          npm whoami
+
       - name: Release (NPM)
         if: ${{ env.DRY_RUN == 'false' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
         run: |
           yarn lerna publish from-git --dist-tag ${{ env.DIST_TAG }} --yes --loglevel silly
