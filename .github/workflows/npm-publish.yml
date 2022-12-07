@@ -1,4 +1,4 @@
-name: Publish Packages to Github Registry
+name: Publish Packages to NPM Registry
 
 on:
   workflow_dispatch:
@@ -24,11 +24,16 @@ on:
           - patch
           - minor
           - major
+      distTag:
+        description: Distribution Tag (e.g. latest, beta, alpha, etc)
+        default: "latest"
+        required: true
       versionExplicit:
         description: "Exact version (e.g. '1.0.1', '1.2.3'). If set, this will override versionType."
 
 env:
   DRY_RUN: ${{ github.event.inputs.releaseType == 'dry-run' }}
+  DIST_TAG: ${{ github.event.inputs.distTag }}
 
 jobs:
   authorize:
@@ -100,10 +105,17 @@ jobs:
           git config --global user.name amplitude-sdk-bot
           git config --global user.email amplitude-sdk-bot@users.noreply.github.com
 
-      - name: Release (Github Registry)
+      - name: Release (Github)
         if: ${{ env.DRY_RUN == 'false' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn lerna publish ${{ env.LERNA_PACKAGE_VERSION }} --yes --loglevel silly
+          yarn lerna version ${{ env.LERNA_PACKAGE_VERSION }} --create-release github --yes --loglevel silly
+
+      - name: Release (NPM)
+        if: ${{ env.DRY_RUN == 'false' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: |
+          yarn lerna publish from-git --dist-tag ${{ env.DIST_TAG }} --yes --loglevel silly
