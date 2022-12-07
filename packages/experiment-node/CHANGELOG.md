@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.9 (2022-12-07)
+
+
+### Bug Fixes
+
+* AMP-65359 publish all packages as public ([f68f6aa](https://github.com/amplitude-alpha/amplitude-sdk-typescript/commit/f68f6aacf089ccf063d889891a3d57fae7f2b444))
+
+
+
+
+
 ## 0.0.8 (2022-12-07)
 
 

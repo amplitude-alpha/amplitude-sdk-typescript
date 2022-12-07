@@ -1,6 +1,6 @@
 {
   "name": "@amplitude-alpha/groups",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
   "homepage": "",
@@ -14,8 +14,8 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude-alpha/amplitude-core": "^0.0.8",
-    "@amplitude-alpha/util": "^0.0.8"
+    "@amplitude-alpha/amplitude-core": "^0.0.9",
+    "@amplitude-alpha/util": "^0.0.9"
   },
   "scripts": {
     "build": "tsc",
