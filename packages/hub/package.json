@@ -20,5 +20,8 @@
     "build": "tsc",
     "clean": "rimraf lib",
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

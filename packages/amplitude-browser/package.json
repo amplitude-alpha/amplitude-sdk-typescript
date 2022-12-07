@@ -23,5 +23,8 @@
     "build": "tsc",
     "clean": "rm -rf lib/*",
     "test": ""
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

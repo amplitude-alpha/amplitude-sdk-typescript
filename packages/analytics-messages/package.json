@@ -22,5 +22,8 @@
     "build": "tsc",
     "clean": "rimraf lib",
     "test": ""
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

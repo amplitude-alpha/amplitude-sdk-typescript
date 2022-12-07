@@ -1,5 +1,6 @@
 {
   "name": "@amplitude-alpha/empty",
+  "private": true,
   "version": "0.0.9",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
