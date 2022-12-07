@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.11 (2022-12-07)
+
+
+### Bug Fixes
+
+* AMP-65359 remove CLI config test temporarily to fix release ([0715e86](https://github.com/amplitude-alpha/amplitude-sdk-typescript/commit/0715e8684a1883c2cb431dcfefd739491e07a139))
+
+
+
+
+
 ## 0.0.10 (2022-12-07)
 
 
