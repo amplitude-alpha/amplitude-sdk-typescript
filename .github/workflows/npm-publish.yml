@@ -87,11 +87,6 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Set registry url
-        uses: actions/setup-node@v3
-        with:
-          registry-url: 'https://npm.pkg.github.com'
-
       - name: Release (Dry Run)
         if: ${{ env.DRY_RUN == 'true' }}
         env:
