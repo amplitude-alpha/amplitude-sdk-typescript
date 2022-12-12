@@ -28,7 +28,7 @@
     "start:server": "npx nodemon src/server.ts",
     "build": "echo 'Build'",
     "clean": "",
-    "test": "AMP_TEST=true jest",
+    "test": "AMP_TEST=true AMP_LOGGING_DISABLED=true jest",
     "cli": "ts-node ../../packages/cli/src/cli.ts",
     "amplitude:pull": "yarn cli pull",
     "amplitude:build": "yarn cli build",

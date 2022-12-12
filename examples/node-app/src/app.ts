@@ -16,10 +16,11 @@ dotenv.config()
 const userId = process.env.AMP_USER_ID || 'alpha-user-id-node';
 const deviceId = process.env.AMP_DEVICE_ID || 'alpha-device-id-node';
 const shouldRunApp = process.env.AMP_TEST !== 'true';
+const useLogger = process.env.AMP_LOGGING_DISABLED !== 'true';
 
 amplitude.typed.load({
   environment: 'production',
-  logger: new Logger(),
+  logger: useLogger ? new Logger() : undefined,
   // Try reading in ApiKeys from .env file
   ...merge(
     getProductConfigurationFromEnv(),
@@ -27,7 +28,7 @@ amplitude.typed.load({
       configuration: {
         analytics: {
           options: {
-            flushIntervalMillis: 0,
+            flushIntervalMillis: 1,
             flushQueueSize: 1
           }
         }

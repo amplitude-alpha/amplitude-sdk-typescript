@@ -3,11 +3,9 @@ import { hub } from "@amplitude-alpha/hub";
 import { trackMessage } from "@amplitude-alpha/analytics-messages";
 import { default as nock } from 'nock';
 import { runApp } from "../src/app";
-import { jsons } from "@amplitude-alpha/util";
 
 const ANALYTICS_API_URL = 'https://api2.amplitude.com';
 const ANALYTICS_API_PATH = '/2/httpapi';
-const ANALYTICS_SUCCESS_MESSAGE = 'Event tracked successfully';
 const ANALYTICS_SUCCESS_PAYLOAD = {
   code: 200,
   events_ingested: 1,
@@ -25,10 +23,7 @@ const EXPERIMENT_FETCH_PAYLOAD = {
   },
 };
 
-
 test('validate events sequence in from app', async () => {
-  // nock.recorder.rec();
-
   // Mock API endpoints
   const analyticsScope = nock(ANALYTICS_API_URL)
       .persist()
