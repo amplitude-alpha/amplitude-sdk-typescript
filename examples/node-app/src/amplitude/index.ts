@@ -267,7 +267,7 @@ export class TrackingPlanClient implements TrackingPlanMethods {
 
 export class AnalyticsClient extends AnalyticsClientNode implements IAnalyticsClient {
   get typed() {
-    return new TrackingPlanClient(this);;
+    return new TrackingPlanClient(this);
   }
 }
 

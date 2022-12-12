@@ -2,6 +2,7 @@ import { Amplitude, experiment, analytics, user, MessageHub, User, Logger } from
 import { userUpdatedMessage, MessageTypes as UserMessageTypes } from "@amplitude-alpha/user-messages";
 import { trackMessage, MessageTypes as AnalyticsMessageTypes } from "@amplitude-alpha/analytics-messages";
 import { analytics as segmentAnalytics } from "@amplitude-alpha/plugin-segment-analytics-browser";
+import { AnalyticsPluginConfig } from "@amplitude-alpha/analytics-node";
 
 const apiKey = 'test-api-key';
 const userId = 'test-user-id';
@@ -33,6 +34,15 @@ test('experiment.exposure() sends a track message on hub.analytics', () => {
   expect(wasHubMessageReceived).toBe(true);
 });
 
+const mockConfig = {
+  analytics: {
+    client: {
+      track: async () => {},
+      flush: async () => {}
+    } as any,
+  } as AnalyticsPluginConfig
+};
+
 test('analytics plugin automatically calls track() on experiment.exposure()', () => {
   const amplitude = new Amplitude();
   const hub = new MessageHub();
@@ -43,7 +53,8 @@ test('analytics plugin automatically calls track() on experiment.exposure()', ()
   amplitude.load({
     apiKey,
     hub,
-    plugins: [ experiment, analytics ]
+    plugins: [ experiment, analytics ],
+    configuration: mockConfig
   })
 
   experiment.exposure();
@@ -64,6 +75,7 @@ test('multiple analytics plugins automatically call track() on experiment.exposu
     hub,
     plugins: [ experiment, analytics, segmentAnalytics ],
     configuration: {
+      ...mockConfig,
       segment: {
         writeKey: 'segment-write-key'
       }

@@ -1,14 +1,14 @@
 import { AnalyticsEvent, IAnalyticsClient } from "@amplitude-alpha/analytics-core";
-import { trackMessage } from "@amplitude-alpha/analytics-messages";
+import { newTrackMessage, trackMessage } from "@amplitude-alpha/analytics-messages";
 import {
   AmplitudePlugin, AmplitudePluginBase, AmplitudePluginCategory, UserClient, Config, PluginConfig,
 } from "@amplitude-alpha/amplitude-node";
 import { User } from "@amplitude-alpha/user";
 import { jsons } from "@amplitude-alpha/util";
 import { createInstance } from "@amplitude/analytics-node"
-import { NodeClient as NodeClientLegacy } from "@amplitude/analytics-types";
+import { NodeClient as NodeClientLegacy, NodeOptions } from "@amplitude/analytics-types";
 
-export type { AnalyticsEvent };
+export type { AnalyticsEvent, NodeOptions };
 
 export interface IAnalytics extends AmplitudePlugin, UserClient<IAnalyticsClient> {}
 
@@ -30,9 +30,14 @@ export class AnalyticsClient implements IAnalyticsClient {
 
     this.config.logger.log(`[Analytics.track] ${jsons(event)}`);
 
-    return this.client.track(event).promise.then(result => {
+    const trackPromise = this.client.track(event).promise.then(result => {
       this.config.logger.log(`Event tracked (${event.event_type}) ${result.message}`)
-    });
+    }).then(_ => {});
+
+    // Publish event on bus to send to other listeners
+    this.config.hub?.analytics.publish(newTrackMessage(this.plugin, event));
+
+    return trackPromise;
   }
 
   async flush() {
@@ -40,6 +45,11 @@ export class AnalyticsClient implements IAnalyticsClient {
 
     return this.client.flush().promise;
   }
+}
+
+export interface AnalyticsPluginConfig {
+  apiKey?: string;
+  options?: NodeOptions;
 }
 
 export class Analytics extends AmplitudePluginBase implements IAnalytics {
@@ -51,13 +61,14 @@ export class Analytics extends AmplitudePluginBase implements IAnalytics {
   private apiKey: string;
   public client: NodeClientLegacy;
 
-  load(config: PluginConfig, pluginConfig?: any) {
+  load(config: PluginConfig, pluginConfig?: AnalyticsPluginConfig) {
     super.load(config, pluginConfig);
 
     this.apiKey = pluginConfig.apiKey ?? config.apiKey;
 
     this.client = createInstance();
-    this.client.init(this.apiKey);
+    this.logger.log(`apiKey=${this.apiKey}]\noptions=${jsons(pluginConfig?.options)}`)
+    this.client.init(this.apiKey, pluginConfig?.options);
   }
 
   user(user: User): IAnalyticsClient {

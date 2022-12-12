@@ -1,26 +1,24 @@
 import {
-  AnalyticsEvent, IAnalyticsClient, AnalyticsPluginConfig as AnalyticsPluginConfigCore,
+  AnalyticsEvent, IAnalyticsClient,
 } from "@amplitude-alpha/analytics-core";
 import {
   AmplitudePlugin, AmplitudePluginCategory, BrowserAmplitudePluginBase, BrowserPluginConfig,
 } from "@amplitude-alpha/amplitude-browser";
 import { jsons } from "@amplitude-alpha/util";
 import { trackMessage, newTrackMessage } from "@amplitude-alpha/analytics-messages";
-import {
-  init,
-  setUserId, setDeviceId, identify, Identify,
-  track,
-  flush,
-} from "@amplitude/analytics-browser";
+import { createInstance, Identify } from "@amplitude/analytics-browser";
+import { BrowserClient as BrowserClientLegacy, BrowserOptions } from "@amplitude/analytics-types";
 import { userUpdatedMessage } from "@amplitude-alpha/user-messages";
 
-export type { AnalyticsEvent, IAnalyticsClient };
-
-export interface AnalyticsPluginConfig extends BrowserPluginConfig, AnalyticsPluginConfigCore {
-
-}
+export type { AnalyticsEvent, IAnalyticsClient, BrowserOptions };
 
 export interface IAnalytics extends AmplitudePlugin, IAnalyticsClient {
+}
+
+export interface AnalyticsPluginConfig {
+  apiKey?: string;
+  userId?: string;
+  options?: BrowserOptions;
 }
 
 export class Analytics extends BrowserAmplitudePluginBase implements IAnalytics {
@@ -29,26 +27,27 @@ export class Analytics extends BrowserAmplitudePluginBase implements IAnalytics 
   name = 'analytics';
   version = 0;
 
-  private apiKey;
+  private apiKey: string;
+  private client: BrowserClientLegacy;
 
-  load(config: AnalyticsPluginConfig, pluginConfig: any) {
+  load(config: BrowserPluginConfig, pluginConfig: AnalyticsPluginConfig) {
     super.load(config, pluginConfig);
 
     this.apiKey = pluginConfig?.apiKey || config.apiKey;
-
-    init(this.apiKey);
+    this.client = createInstance();
+    this.client.init(this.apiKey, pluginConfig?.userId, pluginConfig?.options);
 
     config.hub?.user.subscribe(userUpdatedMessage, message => {
       this.onAcceptableMessage(message.payload, async ({ updateType, user}) => {
         switch (updateType) {
           case "user-id":
             this.config.logger.log(`[Analytics.setUserId] ${user.userId}`);
-            setUserId(user.userId);
+            this.client.setUserId(user.userId);
             break;
 
           case "device-id":
             this.config.logger.log(`[Analytics.setDeviceId] ${user.deviceId}`);
-            setDeviceId(user.deviceId);
+            this.client.setDeviceId(user.deviceId);
             break;
 
           case "user-properties":
@@ -60,7 +59,7 @@ export class Analytics extends BrowserAmplitudePluginBase implements IAnalytics 
               id.set(propName, user.userProperties[propName])
             }
 
-            void identify(id);
+            void this.client.identify(id);
             break;
         }
       })
@@ -93,12 +92,12 @@ export class Analytics extends BrowserAmplitudePluginBase implements IAnalytics 
 
   protected async _track(event: AnalyticsEvent) {
     this.config.logger.log(`[Analytics.track] ${jsons(event)}`);
-    return track(event).promise;
+    return this.client.track(event).promise;
   }
 
   async flush() {
     this.config.logger.log(`[Analytics.flush]`);
-    return flush().promise;
+    return this.client.flush().promise;
   }
 }
 

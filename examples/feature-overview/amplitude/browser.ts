@@ -12,7 +12,7 @@ import { AmplitudeLoadOptions as AmplitudeLoadOptionsCore, Logger, NoLogger } fr
 import { User as UserCore } from "@amplitude-alpha/user";
 import { Amplitude as AmplitudeBrowser } from "@amplitude-alpha/amplitude-browser";
 import { AnalyticsEvent, IAnalyticsClient as IAnalyticsClientCore } from "@amplitude-alpha/analytics-core";
-import { Analytics as AnalyticsBrowser } from "@amplitude-alpha/analytics-browser";
+import { Analytics as AnalyticsBrowser, AnalyticsPluginConfig } from "@amplitude-alpha/analytics-browser";
 import {
   IExperimentClient as IExperimentClientCore,
   Experiment as ExperimentBrowser,
@@ -20,7 +20,7 @@ import {
 
 export { Logger, NoLogger };
 export { MessageHub, hub } from "@amplitude-alpha/hub";
-export type { AnalyticsEvent };
+export type { AnalyticsEvent, AnalyticsPluginConfig };
 
 /**
  * GENERAL INTERFACES

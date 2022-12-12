@@ -5,6 +5,7 @@
  */
 
 import dotenv from 'dotenv';
+import { merge } from 'lodash';
 
 import { amplitude, analytics, experiment, UserLoggedIn, Logger, User } from './amplitude'
 import { getProductConfigurationFromEnv } from "@amplitude-alpha/util";
@@ -14,51 +15,81 @@ dotenv.config()
 
 const userId = process.env.AMP_USER_ID || 'alpha-user-id-node';
 const deviceId = process.env.AMP_DEVICE_ID || 'alpha-device-id-node';
+const shouldRunApp = process.env.AMP_TEST !== 'true';
 
 amplitude.typed.load({
   environment: 'production',
   logger: new Logger(),
   // Try reading in ApiKeys from .env file
-  ...getProductConfigurationFromEnv(),
+  ...merge(
+    getProductConfigurationFromEnv(),
+    {
+      configuration: {
+        analytics: {
+          options: {
+            flushIntervalMillis: 0,
+            flushQueueSize: 1
+          }
+        }
+      }
+    }
+  )
 })
 
-/**
- * 1. Track with `userId`
- */
-analytics.userId(userId).track(new UserLoggedIn({
-  method: "email"
-}));
-
-/**
- * 2. Track with `deviceId`
- */
-analytics.deviceId(deviceId).typed.userSignedUp();
-
-/**
- * 3. Track with `userProperties`
- */
-const user = new User(userId);
-user.typed.setUserProperties({
-  referralSource: 'other'
-})
-analytics.user(user).typed.checkout();
-
-/**
- * 4. Keep user scoped clients for multiple actions for the same user
- */
-// create individual product clients for user
-const userAnalytics =  analytics.user(user);
-const userExperiment =  experiment.user(user);
-
-if (userExperiment.typed.codegenBooleanExperiment().on) {
-  userAnalytics.typed.userSignedUp({
-    referralSource: "other"
-  })
-  userAnalytics.track(new UserLoggedIn({
+export async function runApp() {
+  /**
+   * 1. Track with `userId`
+   */
+  await analytics.userId(userId).track(new UserLoggedIn({
     method: "email"
-  }))
-} else {
-  userAnalytics.track({
-    event_type: 'My Untyped Event'
+  }));
+
+  /**
+   * 2. Track with `deviceId`
+   */
+  await analytics.deviceId(deviceId).typed.userSignedUp();
+
+  /**
+   * 3. Track with `userProperties`
+   */
+  const user = new User(userId);
+  user.typed.setUserProperties({
+    referralSource: 'other'
+  })
+  await analytics.user(user).typed.checkout();
+
+  /**
+   * 4. Keep user scoped clients for multiple actions for the same user
+   */
+  // create individual product clients for user
+  const userAnalytics =  analytics.user(user);
+  const userExperiment =  experiment.user(user);
+
+  await userExperiment.fetch();
+  userExperiment.exposure();
+
+  if (userExperiment.typed.codegenBooleanExperiment().on) {
+    userAnalytics.typed.userSignedUp({
+      referralSource: "other"
+    })
+    userAnalytics.track(new UserLoggedIn({
+      method: "email"
+    }))
+  } else {
+    userAnalytics.track({
+      event_type: 'My Untyped Event'
+    })
+  }
+
+  /**
+   * 5. Flush any pending events
+   */
+  await userAnalytics.flush()
+}
+
+if (shouldRunApp) {
+  // @ts-ignore
+  runApp().then(() => {
+    console.log('Program complete!')
   })
 }
