@@ -19,7 +19,7 @@
     "@amplitude-alpha/hub": "^0.0.11",
     "@amplitude-alpha/user": "^0.0.11",
     "@amplitude-alpha/util": "^0.0.11",
-    "@amplitude/analytics-node": "^0.6.2"
+    "@amplitude/analytics-node": "^1.0.0"
   },
   "scripts": {
     "build": "tsc",
