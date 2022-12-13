@@ -3,7 +3,7 @@
   "npmClient": "yarn",
   "useNx": true,
   "useWorkspaces": true,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "command": {
     "version": {
       "conventionalCommits": true

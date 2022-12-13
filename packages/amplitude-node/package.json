@@ -1,6 +1,6 @@
 {
   "name": "@amplitude-alpha/amplitude-node",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "> TODO: description",
   "author": "justin.fiedler <justin.fiedler@amplitude.com>",
   "homepage": "",
@@ -14,10 +14,10 @@
     "lib"
   ],
   "dependencies": {
-    "@amplitude-alpha/amplitude-core": "^0.0.11",
-    "@amplitude-alpha/hub": "^0.0.11",
-    "@amplitude-alpha/user": "^0.0.11",
-    "@amplitude-alpha/util": "^0.0.11"
+    "@amplitude-alpha/amplitude-core": "^0.0.12",
+    "@amplitude-alpha/hub": "^0.0.12",
+    "@amplitude-alpha/user": "^0.0.12",
+    "@amplitude-alpha/util": "^0.0.12"
   },
   "scripts": {
     "build": "tsc",

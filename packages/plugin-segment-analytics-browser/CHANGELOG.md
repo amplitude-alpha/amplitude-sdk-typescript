@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.12 (2022-12-13)
+
+
+### Bug Fixes
+
+* fixed flush interval and removed logging in node-app tests ([6a7028e](https://github.com/amplitude-alpha/amplitude-sdk-typescript/commit/6a7028ea8e67ebdd25d355b832e7351a34d71491))
+
+
+
+
+
 ## 0.0.11 (2022-12-07)
 
 
